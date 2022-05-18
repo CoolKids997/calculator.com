@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculations For Math</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  
+	<!--[if lte IE 6]>
+<div id="warning">
+<h4 class="red">Your Browser Is Not Supported!</h4><br />
+<p>Please upgrade to <a href='http://getfirefox.com'>FireFox</a>, <a href='http://www.opera.com/download/'>Opera</a>, <a href='http://www.apple.com/safari/'>Safari</a> or <a href='http://www.microsoft.com/windows/downloads/ie/getitnow.mspx'>Internet Explorer 7 or 8</a>. Thank You!&nbsp;&nbsp;&nbsp;<a href="#" onClick="document.getElementById('warning').style.display = 'none';"><b>Close Window</b></a></p>
+</div>
+<![endif]-->
+	
+	</head>
+  
+	
+	<body>
+
+	
+	  
+	  
+	<center>  <iframe width="219" height="302" src="http://calculator-1.com/outdoor/?f=0274C8&r=666666" scrolling="no" frameborder="0"></iframe> </center>
+	  
+	  <!-- Button trigger modal -->
+<center> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  FT to CM
+	</button> </center>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Convert FT to CM</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		 </div>
+      <div class="modal-body">
+       <p>
+  <label>Feet</label>
+  <input id="inputFeet" type="number" placeholder="Feet"
+  oninput="lengthConverter(this.value)" onchange="lengthConverter(this.value)">
+</p>
+<p>cm: <span id="outputMeters"></span></p>
+		 <script>/* When the input field receives input, convert the value from feet to meters */
+function lengthConverter(valNum) {
+  document.getElementById("outputMeters").innerHTML = valNum / 0.0022046;
+}
+			</script>
+		 
+		 </div>
+		 <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+	  
+		<script>
+			function Counter(options) {
+    var timer;
+    var instance = this;
+    var seconds = options.seconds || 10;
+    var onUpdateStatus = options.onUpdateStatus || function() {};
+    var onCounterEnd = options.onCounterEnd || function() {};
+    var onCounterStart = options.onCounterStart || function() {};
+
+    function decrementCounter() {
+        onUpdateStatus(seconds);
+        if (seconds === 0) {
+            stopCounter();
+            onCounterEnd();
+            return;
+        }
+        seconds--;
+    };
+
+    function startCounter() {
+        onCounterStart();
+        clearInterval(timer);
+        timer = 0;
+        decrementCounter();
+        timer = setInterval(decrementCounter, 1000);
+    };
+
+    function stopCounter() {
+        clearInterval(timer);
+    };
+		</script>
+	 
+		<script>
+			var countdown = new Counter({
+    // number of seconds to count down
+    seconds: 3,
+
+    onCounterStart: function () { 
+        // show pop up with a message 
+        ... 
+    },
+
+    // callback function for each second
+    onUpdateStatus: function(second) {
+        // change the UI that displays the seconds remaining in the timeout 
+        ... 
+    },
+
+    // callback function for final action after countdown
+    onCounterEnd: function() {
+        // show message that session is over, perhaps redirect or log out 
+        ... 
+    }
+});
+countdown.start();
+		</script>
+	  
+  
+
+   <center>  <div style="position: absolute; bottom: 5px; background-color: white">
+		
+		<div id="time" style="border: 3px solid blue; text-align: center;font-size: 2em; margin-bottom: 10px">00:00</div>
+		Session Timer
+		<script>
+			window.addEventListener("load", function() {
+  const clock = document.getElementById("time");
+  let time = -1, intervalId;
+  function incrementTime() {
+    time++;
+    clock.textContent =
+      ("0" + Math.trunc(time / 60)).slice(-2) +
+      ":" + ("0" + (time % 60)).slice(-2);
+  }
+  incrementTime();
+  intervalId = setInterval(incrementTime, 1000);
+});
+		</script>
+</div>
+		</center>
+			
+	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
